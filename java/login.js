@@ -118,3 +118,51 @@ if (btnLogout) {
         switchView('login');
     });
 }
+
+// ====================================
+// MODO CLARO / OSCURO
+// ====================================
+
+const themeToggle = document.getElementById('themeToggle');
+const themeLabel = document.getElementById('themeLabel');
+const htmlElement = document.documentElement;
+
+// Cargar preferencia guardada
+const savedTheme = localStorage.getItem('sgg_theme') || 'dark';
+
+htmlElement.setAttribute('data-theme', savedTheme);
+
+if (savedTheme === 'light') {
+    if (themeToggle) themeToggle.checked = true;
+    if (themeLabel) themeLabel.textContent = 'Modo claro';
+} else {
+    if (themeToggle) themeToggle.checked = false;
+    if (themeLabel) themeLabel.textContent = 'Modo oscuro';
+}
+
+// Detectar cambios en el switch
+if (themeToggle) {
+    themeToggle.addEventListener('change', function () {
+
+        if (this.checked) {
+
+            htmlElement.setAttribute('data-theme', 'light');
+
+            if (themeLabel) {
+                themeLabel.textContent = 'Modo claro';
+            }
+
+            localStorage.setItem('sgg_theme', 'light');
+
+        } else {
+
+            htmlElement.setAttribute('data-theme', 'dark');
+
+            if (themeLabel) {
+                themeLabel.textContent = 'Modo oscuro';
+            }
+
+            localStorage.setItem('sgg_theme', 'dark');
+        }
+    });
+}
