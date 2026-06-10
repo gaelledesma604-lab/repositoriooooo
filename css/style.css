@@ -1,7 +1,11 @@
 /* ==========================================================================
    VARIABLES DE DISEÑO (TEMA INDUSTRIAL POR DEFECTO)
    ========================================================================== */
-:root {
+:root,
+[data-theme="dark"] 
+{
+   ...
+}
     --bg-main: #120e1e;
     --bg-card: #1c162e;
     --border-color: #3d2f5c;
@@ -22,7 +26,35 @@
                linear-gradient(60deg, #1d1730 25%, transparent 25.5%, transparent 75%, #1d1730 75.5%, #1d1730);
     --texture-size: 20px 35px;
 }
+/* TEMA CLARO */
 
+[data-theme="light"] {
+
+    --bg-main: #f4f2f7;
+    --bg-card: #ffffff;
+    --border-color: #d2cbdc;
+
+    --text-main: #1c162e;
+    --text-muted: #6b5e8c;
+
+    --primary: #7b2cbf;
+    --primary-hover: #5a189a;
+
+    --success: #0077b6;
+    --success-bg: rgba(0, 119, 182, 0.1);
+
+    --error: #d90429;
+    --error-bg: rgba(217, 4, 41, 0.1);
+
+    --texture: linear-gradient(30deg, #eae6f0 12%, transparent 12.5%, transparent 87%, #eae6f0 87.5%, #eae6f0),
+               linear-gradient(150deg, #eae6f0 12%, transparent 12.5%, transparent 87%, #eae6f0 87.5%, #eae6f0),
+               linear-gradient(30deg, #eae6f0 12%, transparent 12.5%, transparent 87%, #eae6f0 87.5%, #eae6f0),
+               linear-gradient(150deg, #eae6f0 12%, transparent 12.5%, transparent 87%, #eae6f0 87.5%, #eae6f0),
+               linear-gradient(60deg, #f0edf5 25%, transparent 25.5%, transparent 75%, #f0edf5 75.5%, #f0edf5),
+               linear-gradient(60deg, #f0edf5 25%, transparent 25.5%, transparent 75%, #f0edf5 75.5%, #f0edf5);
+
+    --texture-size: 20px 35px;
+}
 /* ==========================================================================
    ESTILOS GENERALES Y RESET
    ========================================================================== */
